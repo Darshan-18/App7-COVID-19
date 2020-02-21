@@ -23,9 +23,152 @@ Known Issues:
 blah, blah, blah, blah
 -->
 
-   <head> 
+   
       
-	   PUT YOUR OLD CODE IN HERE
-	   
-   </body>
+<head> 
+      <title>Cold or Allergy</title>  <!--Changed Title-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css"> 
+
+	<script>
+	//This is where i added the variables for the base count of each the allergy and the cold.//
+		
+	var allergy_count = 0;
+   	var cold_count = 0;
+	var resultText = document.getElementById("results");
+   	
+	// This is function that adds plus one to the count every time an allergy coded button is clicked//
+	function allergyAdd(){
+     		allergy_count = allergy_count + 1;
+   	
+	}
+	// This is function that adds plus one to the count every time an cold coded button is clicked//
+   	function coldAdd(){
+     		cold_count = cold_count + 1;
+   	}
+	var allergyPercent=0;
+	var coldPercent=0;
+	function results(){
+		allergyPercent= allergy_count/ (allergy_count + cold_count) * 100;
+		coldPercent= cold_count/ (allergy_count + cold_count) * 100;
+		var resultText = document.getElementById("results");
+		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%<br> Probability it is a cold =" + coldPercent + "%";
+ 	/* This function allows the count of each allergy and cold to be compiled and displayed as a percentage on the final results page*/
+	}
+</script>
+</head>
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one"  class="w3-btn w3-red w3-square"> Get Started </a> <!--This is where I changed the button color and style-->
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1> <!--Title for question one-->
+	</div>
+	
+    	<div id="content" class="w3-container">
+       		<p>Are your eyes itchy or watery?</p>  <!--Adding Question 1-->  
+    	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-green w3-square"> Yes </a> <!--Added Code for button yes, Question 1--> <!--Added code for resulting in Allergy-->
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-red w3-square"> No </a>	<!--Added Code for button no, Question 1--> <!--Added code for resulting in cold-->
+	</div>
+</div>
+
+<div class="page" id="two">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1> <!--Title for question two-->
+	</div>
+	<div id="content" class="w3-container">
+	<p>Do you have a fever?</p>  <!--Added Question 2-->
+	<a href="#three" onclick="coldAdd();" class="w3-btn w3-green w3-square"> Yes </a> <!--Added Code for button yes, Question 2--> <!--Added code for resulting in cold-->
+	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> No </a>	<!--Added Code for button no, Question 2--> <!--Added code for resulting in Allergy-->
+	</div>
+
+	</div>	
+	
+<div class="page" id="three"> <!--Added New Page-->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1> <!--Title for question three-->
+	</div>
+	<div id="content" class="w3-container">
+	<p>Do you have a sore throat?</p> <!--Added Question 3--> 
+	<a href="#four" onclick="coldAdd();" class="w3-btn w3-green w3-square"> Yes </a> <!--Added Code for button yes, Question 3--> <!--Added code for resulting in cold-->
+	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> No </a>	<!--Added Code for button no, Question 3--> <!--Added code for resulting in Allergy-->
+	</div>
+	
+<div class="page" id="four"> <!--Added new page-->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1> <!--Title for question four-->
+	</div>
+	<div id="content" class="w3-container">
+	<p>Are your symptoms seasonal or chronic?</p> <!--Added Question 4--> 
+	<a href="#five" onclick="allergyAdd();" class="w3-btn w3-green w3-square"> Seasonal </a> <!--Added Code for button Seaonal, instead of yes, Question 4--> <!--Added code for resulting in Allergy-->
+	<a href="#five" onclick="coldAdd();" class="w3-btn w3-red w3-square"> Chronic </a> <!--Added Code for button Chronic, instead of no, Question 4--> <!--Added code for resulting in cold-->
+	</div>
+
+<div class="page" id="five"> <!--Added new page-->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>View Results</h1> <!--Title to last step before actual results-->
+	</div>
+	<div id="content" class="w3-container">
+	<a href="#six" onclick="results();" class="w3-btn w3-green"> Click Here to View Results </a> <!-- Added Final Button to lead to Results page-->
+	</div>
+
+<div class="page" id="six"> <!-- Added final page to view results-->
+	<div id="header" class="w3-container w3-flat-carrot">
+	</div>	
+		<h1>Results</h1> <!--Page title for the actual results page-->
+		<p id="results"></p> <!--Results called back and posted here-->
+			
+		
+</div>
+			
+
+	
+
+
+		
+		
+		
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
+</body>
 </html>
+
