@@ -50,8 +50,8 @@ WILL ADD LATER
 	var brokenPercent=0;
 	var sprainedPercent=0;
 	function results(){
-		brokenPercent= broken_count/ (broken_count + broken_count) * 100;
-		sprainedPercent= sprained_count/ (sprained_count + sprained_count) * 100;
+		brokenPercent= broken_count/ (broken_count + sprained_count) * 100;
+		sprainedPercent= sprained_count/ (sprained_count + broken_count) * 100;
 		var resultText = document.getElementById("results");
 		resultText.innerHTML = "Probability it is broken =" + brokenPercent + "%<br> Probability it is sprained =" + sprainedPercent + "%";
  	/* This function allows the count of each allergy and cold to be compiled and displayed as a percentage on the final results page*/
