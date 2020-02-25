@@ -6,7 +6,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Dr. Tim Riedel
+Dr. Tim Riedel (skeleton code, and basis of App 3)
 Darshan Naik
  
 Further Information:
@@ -19,8 +19,7 @@ triedel@utexas.edu
 Brief Description of Goal of Code:
 We will make our own app, using our questions, with the app still going from page to page and displaying results at the end. 
 Known Issues:
-WILL ADD LATER
--->
+</div> are not consistent from page to page, added own code for footer (not the code provided)
 
    
       
@@ -32,29 +31,28 @@ WILL ADD LATER
       <link rel="stylesheet" href="w3-colors-flat.css"> 
 
 	<script>
-	//This is where i added the variables for the base count of each the allergy and the cold.//
 		
-	var broken_count = 0;
-   	var sprained_count = 0;
-	var resultText = document.getElementById("results");
+	var broken_count = 0; // Set initial count for broken at zero//
+   	var sprained_count = 0; // Set initial count for sprained at zero//
+	var resultText = document.getElementById("results"); // This variable helps link to the results//
    	
-	// This is function that adds plus one to the count every time an allergy coded button is clicked//
+	// This is function that adds plus one to the count every time a broken coded button is clicked//
 	function brokenAdd(){
      		broken_count = broken_count + 1;
    	
 	}
-	// This is function that adds plus one to the count every time an cold coded button is clicked//
+	// This is function that adds plus one to the count every time a sprained coded button is clicked//
    	function sprainedAdd(){
      		sprained_count = sprained_count + 1;
    	}
-	var brokenPercent=0;
-	var sprainedPercent=0;
+	var brokenPercent=0; // This sets the basis of broken percentage at zero//
+	var sprainedPercent=0; // This sets the basis of sprained percentage at zero//
 	function results(){
-		brokenPercent= broken_count/ (broken_count + sprained_count) * 100;
-		sprainedPercent= sprained_count/ (sprained_count + broken_count) * 100;
-		var resultText = document.getElementById("results");
+		brokenPercent= broken_count/ (broken_count + sprained_count) * 100; //Within the function, this compiles the count into a percentage (broken)//
+		sprainedPercent= sprained_count/ (sprained_count + broken_count) * 100; //Within the function, this compiles the count into a percentage (sprained)//
+		var resultText = document.getElementById("results"); // This variable helps link to the results//
 		resultText.innerHTML = "Probability it is broken =" + brokenPercent + "%<br> Probability it is sprained =" + sprainedPercent + "%";
- 	/* This function allows the count of each allergy and cold to be compiled and displayed as a percentage on the final results page*/
+ 		// This is the text of the results with the correct values inputted//
 	}
 </script>
 </head>
@@ -81,8 +79,8 @@ WILL ADD LATER
     z-index: 1;
 }
 </style>
-
-<style>
+<!-- The code below codes for the footer throughout all the pages, sorry if I wasn't supposed to do it this way -->
+<style>		
 .footer {
   position: fixed;
   left: 0;
@@ -93,7 +91,7 @@ WILL ADD LATER
   text-align: center;
 }
 </style>
-
+<!-- The code below allows the image to be resized to 90% of what the given screen allows for the image -->
 <style>
        	img, object{
             	max-height:90%;
@@ -101,113 +99,111 @@ WILL ADD LATER
         }
 </style>
 
-<div class="footer">
-  <p>DIY!</p>
-</div>	
+
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Is your ankle broken or sprained?</h1>
-</div>
+	<h1>Is your ankle broken or sprained?</h1> <!--Changed the title to correlate with my own app-->
+</div> <!--For header-->
 	
 <div id="content" class="w3-container">
 	<p>Are you feeling like your ankle may be sprained or even broken? Answer a few short questions to find out!</p>
 	
-	<a href="#one"  class="w3-btn w3-blue w3-square"> Get Started </a> <!--This is where I changed the button color and style-->
+	<a href="#one"  class="w3-btn w3-red w3-square"> Get Started </a> <!--This is where I changed the button color and style-->
 	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-<center><img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_300/https://smgortho.com/wp-content/uploads/2018/03/Rolling-ankle-300x195.jpg" alt="Broken Ankle"></center>
-<!--<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
-</footer> -->
-
+<center><img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_300/https://smgortho.com/wp-content/uploads/2018/03/Rolling-ankle-300x195.jpg" alt="Broken Ankle"></center> <!--This is where I added the image, adding extra code to allow it to be in the center of the page-->
+	</div> <!--For Content-->
 	
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1> <!--Title for question one-->
-	</div>
+	</div> <!--For header-->
 	
     	<div id="content" class="w3-container">
-       		<p>What noise occured when you hurt you ankle?</p>  <!--Adding Question 1-->  
-    	<a href="#two" onclick="brokenAdd();" class="w3-btn w3-yellow w3-square"> A crack </a> <!--Added Code for button yes, Question 1--> <!--Added code for resulting in Allergy-->
-	<a href="#two" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> A pop </a>	<!--Added Code for button no, Question 1--> <!--Added code for resulting in cold-->
-	</div>
-<div class="footer">
+       		<p>What noise occured when you hurt you ankle?</p>  <!--Added Question 1-->  
+    	<a href="#two" onclick="brokenAdd();" class="w3-btn w3-yellow w3-square"> A crack </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
+	<a href="#two" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> A pop </a> <!--Added Code for button "a pop", onclick allows the selection to be tracked an added to overall sprained response bank-->
+	</div> <!--For Content-->
+<div class="footer">  <!--This is where the footer occurs, with text of Get Well Soon :)-->
   <p>Get Well Soon :)</p>
-</div>	
+</div>	<!--For Footer-->
 
-</div>
+</div> <!--For Entire Page-->
 
 <div class="page" id="two">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1> <!--Title for question two-->
-	</div>
+	</div> <!--For header-->
 	<div id="content" class="w3-container">
 	<p>Is your ankle misshapen (ignoring swelling)?</p>  <!--Added Question 2-->
-	<a href="#three" onclick="brokenAdd();" class="w3-btn w3-green w3-square"> Yes </a> <!--Added Code for button yes, Question 2--> <!--Added code for resulting in cold-->
-	<a href="#three" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> No </a>	<!--Added Code for button no, Question 2--> <!--Added code for resulting in Allergy-->
-	</div>
-<div class="footer">
+	<a href="#three" onclick="brokenAdd();" class="w3-btn w3-green w3-square"> Yes </a> <!--Added Code for button "yes", onclick allows the selection to be tracked an added to overall broken response bank-->
+	<a href="#three" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> No </a> <!--Added Code for button "no", onclick allows the selection to be tracked an added to overall sprained response bank-->
+	</div> <!--For Content-->
+<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
   <p>Get Well Soon :)</p>
-</div>	
+</div> <!--For Footer-->
 
-</div>	
+</div> <!--For Entire Page-->
 	
 <div class="page" id="three"> <!--Added New Page-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1> <!--Title for question three-->
-	</div>
+	</div> <!--For header-->
 	<div id="content" class="w3-container">
   	<p>What sensation are you feeling?</p> <!--Added Question 3--> 
-	<a href="#four" onclick="sprainedAdd();" class="w3-btn w3-green w3-square"> Pain </a> <!--Added Code for button yes, Question 3--> <!--Added code for resulting in cold-->
-	<a href="#four" onclick="brokenAdd();" class="w3-btn w3-red w3-square"> Numbness/Tingling </a>	<!--Added Code for button no, Question 3--> <!--Added code for resulting in Allergy-->
-</div>
+	<a href="#four" onclick="sprainedAdd();" class="w3-btn w3-green w3-square"> Pain </a> <!--Added Code for button "pain", onclick allows the selection to be tracked an added to overall sprained response bank-->
+	<a href="#four" onclick="brokenAdd();" class="w3-btn w3-red w3-square"> Numbness/Tingling </a>	<!--Added Code for button "numbness/tingling", onclick allows the selection to be tracked an added to overall broken response bank-->
+</div> <!--For Content-->
 
-<div class="footer">
+<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
   <p>Get Well Soon :)</p>
-</div>		
-	
+</div>	<!--For Footer-->	
+
+</div> <!--For Entire Page-->	
+
 <div class="page" id="four"> <!--Added new page-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1> <!--Title for question four-->
-	</div>
+	</div> <!--For header-->
 	<div id="content" class="w3-container">
 	<p>Where does it hurt to touch?</p> <!--Added Question 4--> 
-	<a href="#five" onclick="brokenAdd();" class="w3-btn w3-green w3-square"> Ankle Bone </a> <!--Added Code for button Seaonal, instead of yes, Question 4--> <!--Added code for resulting in Allergy-->
-	<a href="#five" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> Soft part of Ankle </a> <!--Added Code for button Chronic, instead of no, Question 4--> <!--Added code for resulting in cold-->
-	</div>
+	<a href="#five" onclick="brokenAdd();" class="w3-btn w3-green w3-square"> Ankle Bone </a> <!--Added Code for button "Ankle Bone", onclick allows the selection to be tracked an added to overall broken response bank-->
+	<a href="#five" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> Soft part of Ankle </a> <!--Added Code for button "Soft part of Ankle", onclick allows the selection to be tracked an added to overall sprained response bank-->
+	</div> <!--For Content-->
 
-<div class="footer">
+<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
   <p>Get Well Soon :)</p>
-</div>	
+</div> <!--For Footer-->	
 
+</div>	<!--For Entire Page-->
 <div class="page" id="five"> <!--Added new page-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>View Results</h1> <!--Title to last step before actual results-->
-	</div>
+	</div> <!--For header-->
 	<div id="content" class="w3-container">
 	<a href="#six" onclick="results();" class="w3-btn w3-green"> Click Here to View Results </a> <!-- Added Final Button to lead to Results page-->
-	</div>
-<div class="footer">
+	</div> <!--For Content-->
+<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
   <p>Get Well Soon :)</p>
-</div>	
+</div> <!--For Footer-->	
 
 <div class="page" id="six"> <!-- Added final page to view results-->
 	<div id="header" class="w3-container w3-flat-carrot">
 	<h1>Results</h1> <!--Page title for the actual results page-->
-	</div>
+	</div> <!--For header-->
 	<div id="content" class="w3-container">
 	<p id="results"></p> <!--Results called back and posted here-->
-	</div>
+	</div> <!--For Content-->
 
-<div class="footer">
+<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
 <p>Get Well Soon :)</p>
-</div>				
+</div> <!--For Footer-->				
 		
-</div>
+</div> <!--For Entire Page-->
 			
 
 	
@@ -218,7 +214,7 @@ WILL ADD LATER
 		
 <!--<footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
-</footer> -->
+</footer> -->	<!-- This was the original code for a footer, I could not get it to work per page so I decided to try a new method, hope that is okay-->
 
 </body>
 </html>
