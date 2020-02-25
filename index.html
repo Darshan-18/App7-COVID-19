@@ -19,7 +19,7 @@ triedel@utexas.edu
 Brief Description of Goal of Code:
 We will make our own app, using our questions, with the app still going from page to page and displaying results at the end. 
 Known Issues:
-Added own code for footer (not the code provided)
+Added own code for footer (not the code provided), not sure if identation/spacing is correct
 
    
       
@@ -91,25 +91,22 @@ Added own code for footer (not the code provided)
   text-align: center;
 }
 </style>
-<!-- The code below allows the image to be resized to 90% of what the given screen allows for the image -->
+<!--The code below allows the image to be resized to 90% of what the given screen allows for the image-->
 <style>
        	img, object{
             	max-height:90%;
         	max-width:90%;
         }
 </style>
-
-
-
   <body>
     <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Is your ankle broken or sprained?</h1> <!--Changed the title to correlate with my own app-->
+      <h1>Is your ankle broken or sprained?</h1> <!--Changed the title to correlate with my own app-->
     </div> <!--For header-->
 	
     <div id="content" class="w3-container">
       <p>Are you feeling like your ankle may be sprained or even broken? Answer a few short questions to find out!</p>
 	
-      <a href="#one"  class="w3-btn w3-yellow w3-square"> Get Started </a> <!--This is where I changed the button color and style-->
+      <a href="#one" class="w3-btn w3-yellow w3-square"> Get Started </a> <!--This is where I changed the button color and style-->
 	
       <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
@@ -118,104 +115,111 @@ Added own code for footer (not the code provided)
       <center><img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_300/https://smgortho.com/wp-content/uploads/2018/03/Rolling-ankle-300x195.jpg" alt="Broken Ankle"></center> <!--This is where I added the image, adding extra code to allow it to be in the center of the page-->
     </div> <!--For Content-->
 	
-<div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1> <!--Title for question one-->
-	</div> <!--For header-->
+    <div class="page" id="one">
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Question 1</h1> <!--Title for question one-->
+      </div> <!--For header-->
 	
-    	<div id="content" class="w3-container">
-       		<p>What noise occured when you hurt you ankle?</p>  <!--Added Question 1-->  
-    	<a href="#two" onclick="brokenAdd();" class="w3-btn w3-yellow w3-square"> A crack </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
-	<a href="#two" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> A pop </a> <!--Added Code for button "a pop", onclick allows the selection to be tracked an added to overall sprained response bank-->
-	</div> <!--For Content-->
-<div class="footer">  <!--This is where the footer occurs, with text of Get Well Soon :)-->
-  <p>Get Well Soon :)</p>
-</div>	<!--For Footer-->
+      <div id="content" class="w3-container">
+        <p>What noise occured when you hurt you ankle?</p> <!--Added Question 1-->  
+        <a href="#two" onclick="brokenAdd();" class="w3-btn w3-yellow w3-square"> A crack </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
+        <a href="#two" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> A pop </a> <!--Added Code for button "a pop", onclick allows the selection to be tracked an added to overall sprained response bank-->
+      </div> <!--For Content-->
 
-</div> <!--For Entire Page-->
+      <div class="footer"><!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div><!--For Footer-->
 
-<div class="page" id="two">
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1> <!--Title for question two-->
-	</div> <!--For header-->
-	<div id="content" class="w3-container">
+    </div> <!--For Entire Page-->
+
+    <div class="page" id="two">
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Question 2</h1> <!--Title for question two-->
+      </div> <!--For header-->
+      
+      <div id="content" class="w3-container">
 	<p>Is your ankle misshapen (ignoring swelling)?</p>  <!--Added Question 2-->
 	<a href="#three" onclick="brokenAdd();" class="w3-btn w3-green w3-square"> Yes </a> <!--Added Code for button "yes", onclick allows the selection to be tracked an added to overall broken response bank-->
 	<a href="#three" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> No </a> <!--Added Code for button "no", onclick allows the selection to be tracked an added to overall sprained response bank-->
-	</div> <!--For Content-->
-<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
-  <p>Get Well Soon :)</p>
-</div> <!--For Footer-->
+      </div> <!--For Content-->
 
-</div> <!--For Entire Page-->
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->
+
+    </div> <!--For Entire Page-->
 	
-<div class="page" id="three"> <!--Added New Page-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1> <!--Title for question three-->
-	</div> <!--For header-->
-	<div id="content" class="w3-container">
+    <div class="page" id="three"> <!--Added New Page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Question 3</h1> <!--Title for question three-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
   	<p>What sensation are you feeling?</p> <!--Added Question 3--> 
 	<a href="#four" onclick="sprainedAdd();" class="w3-btn w3-green w3-square"> Pain </a> <!--Added Code for button "pain", onclick allows the selection to be tracked an added to overall sprained response bank-->
-	<a href="#four" onclick="brokenAdd();" class="w3-btn w3-red w3-square"> Numbness/Tingling </a>	<!--Added Code for button "numbness/tingling", onclick allows the selection to be tracked an added to overall broken response bank-->
-</div> <!--For Content-->
+	<a href="#four" onclick="brokenAdd();" class="w3-btn w3-red w3-square"> Numbness/Tingling </a> <!--Added Code for button "numbness/tingling", onclick allows the selection to be tracked an added to overall broken response bank-->
+      </div> <!--For Content-->
 
-<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
-  <p>Get Well Soon :)</p>
-</div>	<!--For Footer-->	
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
 
-</div> <!--For Entire Page-->	
+    </div> <!--For Entire Page-->	
 
-<div class="page" id="four"> <!--Added new page-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 4</h1> <!--Title for question four-->
-	</div> <!--For header-->
-	<div id="content" class="w3-container">
-	<p>Where does it hurt to touch?</p> <!--Added Question 4--> 
+    <div class="page" id="four"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Question 4</h1> <!--Title for question four-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+        <p>Where does it hurt to touch?</p> <!--Added Question 4--> 
 	<a href="#five" onclick="brokenAdd();" class="w3-btn w3-green w3-square"> Ankle Bone </a> <!--Added Code for button "Ankle Bone", onclick allows the selection to be tracked an added to overall broken response bank-->
 	<a href="#five" onclick="sprainedAdd();" class="w3-btn w3-red w3-square"> Soft part of Ankle </a> <!--Added Code for button "Soft part of Ankle", onclick allows the selection to be tracked an added to overall sprained response bank-->
-	</div> <!--For Content-->
+      </div> <!--For Content-->
 
-<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
-  <p>Get Well Soon :)</p>
-</div> <!--For Footer-->	
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
 
-</div>	<!--For Entire Page-->
-<div class="page" id="five"> <!--Added new page-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>View Results</h1> <!--Title to last step before actual results-->
-	</div> <!--For header-->
-	<div id="content" class="w3-container">
-	<a href="#six" onclick="results();" class="w3-btn w3-green"> Click Here to View Results </a> <!-- Added Final Button to lead to Results page-->
-	</div> <!--For Content-->
-<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
-  <p>Get Well Soon :)</p>
-</div> <!--For Footer-->	
+    </div> <!--For Entire Page-->
 
-<div class="page" id="six"> <!-- Added final page to view results-->
-	<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Results</h1> <!--Page title for the actual results page-->
-	</div> <!--For header-->
-	<div id="content" class="w3-container">
-	<p id="results"></p> <!--Results called back and posted here-->
-	</div> <!--For Content-->
-
-<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
-<p>Get Well Soon :)</p>
-</div> <!--For Footer-->				
-		
-</div> <!--For Entire Page-->
-			
-
+    <div class="page" id="five"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>View Results</h1> <!--Title to last step before actual results-->
+      </div> <!--For header-->
 	
+      <div id="content" class="w3-container">
+	<a href="#six" onclick="results();" class="w3-btn w3-green"> Click Here to View Results </a> <!-- Added Final Button to lead to Results page-->
+      </div> <!--For Content-->
 
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
 
+    </div> <!--For Entire Page-->   
+
+    <div class="page" id="six"> <!-- Added final page to view results-->
+      <div id="header" class="w3-container w3-flat-carrot">
+	<h1>Results</h1> <!--Page title for the actual results page-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<p id="results"></p> <!--Results called back and posted here-->
+      </div> <!--For Content-->
+
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->				
 		
+    </div> <!--For Entire Page-->
 		
 		
 <!--<footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
-</footer> -->	<!-- This was the original code for a footer, I could not get it to work per page so I decided to try a new method, hope that is okay-->
+</footer> -->	
+<!-- This was the original code for a footer, I could not get it to work per page so I decided to try a new method, 
+hope that is okay-->
 
-</body>
+  </body>
 </html>
 
