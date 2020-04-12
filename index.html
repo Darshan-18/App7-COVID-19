@@ -17,36 +17,55 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-We will make our own app, using our questions, with the app still going from page to page and displaying results at the end. 
+We will make our own app, using our questions, with the app still going from page to page and displaying results at the end. Making it more advanced to follow the AAFA chart to detect COVID-19.
 Known Issues:
 Added own code for footer (not the code provided), not sure if identation/spacing is correct
 -->
    
       
 <head> 
-      <title>Broken or Sprained?</title>  <!--Changed Title-->
+      <title>COVID-19 Diagnostic</title>  <!--Changed Title-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css"> 
 
-	<script>
+<script>
+var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.	
+	
 		
-	var broken_count = 0; // Set initial count for broken at zero//
-   	var sprained_count = 0; // Set initial count for sprained at zero//
+	var covid_count = 0; // Set initial count for broken at zero//
+   	var flu_count = 0; // Set initial count for sprained at zero//
+	var cold_count = 0;
+	var allergy_count = 0;
+		
 	var resultText = document.getElementById("results"); // This variable helps link to the results//
    	
 	// This is function that adds plus one to the count every time a broken coded button is clicked//
-	function brokenAdd(){
-     		broken_count = broken_count + 1;
+	function covidAdd(){
+     		covid_count = covid_count + 1;
    	
 	}
 	// This is function that adds plus one to the count every time a sprained coded button is clicked//
-   	function sprainedAdd(){
-     		sprained_count = sprained_count + 1;
+   	function fluAdd(){
+     		flu_count = flu_count + 1;
    	}
-	var brokenPercent=0; // This sets the basis of broken percentage at zero//
-	var sprainedPercent=0; // This sets the basis of sprained percentage at zero//
+	
+	function coldAdd(){
+		cold_count = cold_count + 1;
+	}
+	
+	function allergyAdd(){
+		allergy_count = allergy_count + 1;
+	}
+		
+	var covidPercent=0; // This sets the basis of broken percentage at zero//
+	var fluPercent=0; // This sets the basis of sprained percentage at zero//
+	var coldPercent=0;
+	var allergyPercent=0;
+		
 	function results(){
 		brokenPercent= broken_count/ (broken_count + sprained_count) * 100; //Within the function, this compiles the count into a percentage (broken)//
 		sprainedPercent= sprained_count/ (sprained_count + broken_count) * 100; //Within the function, this compiles the count into a percentage (sprained)//
@@ -92,19 +111,14 @@ Added own code for footer (not the code provided), not sure if identation/spacin
 }
 </style>
 <!--The code below allows the image to be resized to 90% of what the given screen allows for the image-->
-<style>
-       	img, object{
-            	max-height:90%;
-        	max-width:90%;
-        }
-</style>
+
   <body>
     <div id="header" class="w3-container w3-flat-carrot">
-      <h1>Is your ankle broken or sprained?</h1> <!--Changed the title to correlate with my own app-->
+      <h1>Showing signs of COVID-19? </h1> <!--Changed the title to correlate with my own app-->
     </div> <!--For header-->
 	
     <div id="content" class="w3-container">
-      <p>Are you feeling like your ankle may be sprained or even broken? Answer a few short questions to find out!</p>
+      <p>If you are falling sick and are showing signs of COVID-19, then answer the following questions for preliminary results.</p>
 	
       <a href="#one" class="w3-btn w3-green w3-square"> Get Started </a> <!--This is where I changed the button color and style-->
 	
@@ -112,7 +126,7 @@ Added own code for footer (not the code provided), not sure if identation/spacin
  	
       <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-      <center><img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_300/https://smgortho.com/wp-content/uploads/2018/03/Rolling-ankle-300x195.jpg" alt="Broken Ankle"></center> <!--This is where I added the image, adding extra code to allow it to be in the center of the page-->
+       
     </div> <!--For Content-->
 	
     <div class="page" id="one">
@@ -121,9 +135,11 @@ Added own code for footer (not the code provided), not sure if identation/spacin
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-        <p>What noise occured when you hurt you ankle?</p> <!--Added Question 1-->  
-        <a href="#two" onclick="brokenAdd();" class="w3-btn w3-yellow w3-square"> A crack </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
-        <a href="#two" onclick="sprainedAdd();" class="w3-btn w3-blue w3-square"> A pop </a> <!--Added Code for button "a pop", onclick allows the selection to be tracked an added to overall sprained response bank-->
+        <p>Length of Symptoms</p> <!--Added Question 1-->  
+        <a href="#two" onclick="covidAdd();" class="w3-btn w3-red w3-square"> 7-25 days </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
+        <a href="#two" onclick="fluAdd();" class="w3-btn w3-red w3-square"> 7-14 days </a> <!--Added Code for button "a pop", onclick allows the selection to be tracked an added to overall sprained response bank-->
+        <a href="#two" onclick="coldAdd();" class="w3-btn w3-red w3-square"> Less than 14 days </a>
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Several Weeks </a>    
       </div> <!--For Content-->
 
       <div class="footer"><!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -138,9 +154,10 @@ Added own code for footer (not the code provided), not sure if identation/spacin
       </div> <!--For header-->
       
       <div id="content" class="w3-container">
-	<p>Is your ankle misshapen (ignoring swelling)?</p>  <!--Added Question 2-->
-	<a href="#three" onclick="brokenAdd();" class="w3-btn w3-yellow w3-square"> Yes </a> <!--Added Code for button "yes", onclick allows the selection to be tracked an added to overall broken response bank-->
-	<a href="#three" onclick="sprainedAdd();" class="w3-btn w3-blue w3-square"> No </a> <!--Added Code for button "no", onclick allows the selection to be tracked an added to overall sprained response bank-->
+	<p>Do you have a cough?</p>  <!--Added Question 2-->
+	<a href="#three" onclick="covidAdd();" onclick="fluAdd();" class="w3-btn w3-red w3-square"> Yes, dry </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
+        <a href="#three" onclick="coldAdd();" class="w3-btn w3-red w3-square"> Yes, mild </a>
+	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Rarely </a>     
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -155,9 +172,9 @@ Added own code for footer (not the code provided), not sure if identation/spacin
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-  	<p>What sensation are you feeling?</p> <!--Added Question 3--> 
-	<a href="#four" onclick="sprainedAdd();" class="w3-btn w3-yellow w3-square"> Pain </a> <!--Added Code for button "pain", onclick allows the selection to be tracked an added to overall sprained response bank-->
-	<a href="#four" onclick="brokenAdd();" class="w3-btn w3-blue w3-square"> Numbness/Tingling </a> <!--Added Code for button "numbness/tingling", onclick allows the selection to be tracked an added to overall broken response bank-->
+  	<p>Do you have shortness of breath?</p> <!--Added Question 3--> 
+	<a href="#four" onclick="covidAdd();" class="w3-btn w3-red w3-square"> Sometimes </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
+        <a href="#four" onclick="fluAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> No </a> <!--Added Code for button "a pop", onclick allows the selection to be tracked an added to overall sprained response bank-->  
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -172,9 +189,9 @@ Added own code for footer (not the code provided), not sure if identation/spacin
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-        <p>Where does it hurt to touch?</p> <!--Added Question 4--> 
-	<a href="#five" onclick="brokenAdd();" class="w3-btn w3-yellow w3-square"> Ankle Bone </a> <!--Added Code for button "Ankle Bone", onclick allows the selection to be tracked an added to overall broken response bank-->
-	<a href="#five" onclick="sprainedAdd();" class="w3-btn w3-blue w3-square"> Soft part of Ankle </a> <!--Added Code for button "Soft part of Ankle", onclick allows the selection to be tracked an added to overall sprained response bank-->
+        <p>Are you sneezing?</p> <!--Added Question 4--> 
+	<a href="#five" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Yes </a> <!--Added Code for button "Ankle Bone", onclick allows the selection to be tracked an added to overall broken response bank-->
+	<a href="#five" onclick="covidAdd();" onclick="fluAdd();"  class="w3-btn w3-red w3-square"> No </a> <!--Added Code for button "Soft part of Ankle", onclick allows the selection to be tracked an added to overall sprained response bank-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -185,11 +202,129 @@ Added own code for footer (not the code provided), not sure if identation/spacin
 
     <div class="page" id="five"> <!--Added new page-->
       <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Do you have a runny or stuffy nose?</h1> <!--Title to last step before actual results-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<a href="#six" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Yes, its common </a> <!-- Added Final Button to lead to Results page-->
+        <a href="#six" onclick="fluAdd();" class="w3-btn w3-red"> Sometimes </a>
+        <a href="#six" onclick="covidAdd();" class="w3-btn w3-red"> Rarely/Not at all </a>
+      </div> <!--For Content-->
+
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
+
+    </div> <!--For Entire Page-->   <!--6-->
+
+     <div class="page" id="six"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>How often do you have a sore throat?</h1> <!--Title to last step before actual results-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<a href="#seven" onclick="coldAdd();" class="w3-btn w3-red"> Its common </a>
+	<a href="#seven" onclick="covidAdd();" onclick="fluAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a> <!-- Added Final Button to lead to Results page-->
+      </div> <!--For Content-->
+
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
+
+    </div> <!--For Entire Page-->   <!--7-->
+
+	  <div class="page" id="seven"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Do you have a fever?</h1> <!--Title to last step before actual results-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<a href="#eight" onclick="covidAdd();" onclick="fluAdd();" class="w3-btn w3-red"> Yes </a>
+	<a href="#eight" onclick="coldAdd();" class="w3-btn w3-red"> Yes, short period </a>      
+	<a href="#eight" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added Final Button to lead to Results page-->
+      </div> <!--For Content-->
+
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
+
+    </div> <!--For Entire Page-->   <!--8-->
+
+	  <div class="page" id="eight"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Are you feeling tired and weak?</h1> <!--Title to last step before actual results-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<a href="#nine" onclick="fluAdd();" class="w3-btn w3-red"> Yes, its common </a>
+	<a href="#nine" onclick="covidAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a>
+	<a href="#nine" onclick="covidAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added Final Button to lead to Results page-->
+      </div> <!--For Content-->
+
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
+
+    </div> <!--For Entire Page-->   <!--9-->
+
+	  <div class="page" id="nine"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1> When are you having headaches?</h1> <!--Title to last step before actual results-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<a href="#ten" onclick="fluAdd();" class="w3-btn w3-red"> Yes </a>
+	<a href="#ten" onclick="covidAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a>
+	<a href="#ten" onclick="coldAdd();" class="w3-btn w3-red"> Rarely </a>
+      </div> <!--For Content-->
+
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
+
+    </div> <!--For Entire Page-->   <!--10-->
+
+	  <div class="page" id="ten"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Are you having body aches and pains?</h1> <!--Title to last step before actual results-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<a href="#eleven" onclick="coldAdd();" onclick="fluAdd();" class="w3-btn w3-red"> Yes, its common </a>
+	<a href="#eleven" onclick="covidAdd();" class="w3-btn w3-red"> Sometimes </a>
+	<a href="#eleven" onclick="allergyAdd();" class="w3-btn w3-red"> No </a>
+      </div> <!--For Content-->
+
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
+
+   </div> <!--For Entire Page-->   <!--11-->
+
+	  <div class="page" id="eleven"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Are you having diarrhea?</h1> <!--Title to last step before actual results-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<a href="#twelve" onclick="covidAdd();" class="w3-btn w3-red"> Sometimes </a>
+	<a href="#twelve" onclick="fluAdd();" class="w3-btn w3-red"> Sometimes for children </a>
+	<a href="#twelve" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added Final Button to lead to Results page-->
+      </div> <!--For Content-->
+
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
+
+    </div> <!--For Entire Page-->  
+
+	 <div class="page" id="twelve"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
         <h1>View Results</h1> <!--Title to last step before actual results-->
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	<a href="#six" onclick="results();" class="w3-btn w3-green"> Click Here to View Results </a> <!-- Added Final Button to lead to Results page-->
+	<a href="#thirteen" onclick="results();" class="w3-btn w3-green"> Click Here to View Results </a> <!-- Added Final Button to lead to Results page-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -197,8 +332,31 @@ Added own code for footer (not the code provided), not sure if identation/spacin
       </div> <!--For Footer-->	
 
     </div> <!--For Entire Page-->   
-
-    <div class="page" id="six"> <!-- Added final page to view results-->
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	
+      <div class="page" id="six"> <!-- Added final page to view results-->
       <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Results</h1> <!--Page title for the actual results page-->
       </div> <!--For header-->
@@ -213,7 +371,28 @@ Added own code for footer (not the code provided), not sure if identation/spacin
 		
     </div> <!--For Entire Page-->
 		
-		
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 <!--<footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer> -->	
