@@ -65,27 +65,27 @@ console.log("This file last modified " + docMod); // generates message in javaSc
     		var c6 = document.getElementById("c6"); // variable that defines the canvas by name
     		var c6_context = c6.getContext("2d"); // variable that gives context to canvas because it is 2D
    		if (covid_count > 5){
-		c6_context.fillStyle = '#00FF00'; // Style of text , green color
+		c6_context.fillStyle = '#FF0000'; // Style of text , red color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
-    		c6_context.fillText('Strong Covid Symptoms: Seek Medical Attention', 0, 100); // text to show and specific loction on canvas
+    		c6_context.fillText('Strong Covid Symptoms: Seek Medical Attention', 50, 100); // text to show and specific loction on canvas
 	      } else if (flu_count > 5){
 		c6_context.fillStyle = '#00FF00'; // Style of text , green color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
-    		c6_context.fillText('Strong Flu Symptoms: Rest/OTC Anti-Inflammatory Pain Relievers', 0, 100); // text to show and specific loction on canvas
+    		c6_context.fillText('Strong Flu Symptoms: Rest/OTC Anti-Inflammatory Pain Relievers', 50, 100); // text to show and specific loction on canvas
 	      } else if (cold_count > 5){
-		c6_context.fillStyle = '#00FF00'; // Style of text , green color
+		c6_context.fillStyle = '#0000FF'; // Style of text , blue color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
-    		c6_context.fillText('Stong Cold Symptoms: Rest/Replenish Fluids and Vitamins', 0, 100); // text to show and specific loction on canvas
+    		c6_context.fillText('Strong Cold Symptoms: Rest/Replenish Fluids and Vitamins', 50, 100); // text to show and specific loction on canvas
 	      } else if (allergy_count > 5){
-		c6_context.fillStyle = '#00FF00'; // Style of text , green color
+		c6_context.fillStyle = '#ffff00'; // Style of text , yellow color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
-    		c6_context.fillText('Strong Allergy Symptoms: Stay Indoors/Use Antihistamines', 0, 100); // text to show and specific loction on canvas
+    		c6_context.fillText('Strong Allergy Symptoms: Stay Indoors/Use Antihistamines', 50, 100); // text to show and specific loction on canvas
 	      } else {
-		c6_context.fillStyle = '#00FF00'; // Style of text , green color
+		c6_context.fillStyle = '#000000'; // Style of text , black color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
     		c6_context.fillText('No Strong Indications: Rest/Replenish Fluids and OTC Medicine ', 50, 100); // text to show and specific loction on canvas
