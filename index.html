@@ -36,27 +36,26 @@ alert("This file last modified " + docMod); // generates alert box with time sta
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.	
 	
 		
-	var covid_count = 0; // Set initial count for broken at zero//
-   	var flu_count = 0; // Set initial count for sprained at zero//
-	var cold_count = 0;
-	var allergy_count = 0;
+	var covid_count = 0; // Set initial count for covid at zero//
+   	var flu_count = 0; // Set initial count for flu at zero//
+	var cold_count = 0; // Set initial count for cold at zero//
+	var allergy_count = 0; // Set initial count for allergy at zero//
 		
-	var resultText = document.getElementById("results"); // This variable helps link to the results//
-   	
-	// This is function that adds plus one to the count every time a broken coded button is clicked//
+	
+	// This is function that adds plus one to the count every time a covid coded button is clicked//
 	function covidAdd(){
      		covid_count = covid_count + 1;
    	
 	}
-	// This is function that adds plus one to the count every time a sprained coded button is clicked//
+	// This is function that adds plus one to the count every time a flu coded button is clicked//
    	function fluAdd(){
      		flu_count = flu_count + 1;
    	}
-	
+	// This is function that adds plus one to the count every time a cold coded button is clicked//
 	function coldAdd(){
 		cold_count = cold_count + 1;
 	}
-	
+	// This is function that adds plus one to the count every time a allergy coded button is clicked//
 	function allergyAdd(){
 		allergy_count = allergy_count + 1;
 	}
@@ -64,27 +63,27 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	function showFillText() { // function that buttion links to draw text
     		var c6 = document.getElementById("c6"); // variable that defines the canvas by name
     		var c6_context = c6.getContext("2d"); // variable that gives context to canvas because it is 2D
-   		if (covid_count > 5){
+   		if (covid_count > 5){ //if covid count is 5 then the text below will show
 		c6_context.fillStyle = '#FF0000'; // Style of text , red color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
     		c6_context.fillText('Strong Covid Symptoms: Seek Medical Attention', 50, 100); // text to show and specific loction on canvas
-	      } else if (flu_count > 5){
+	      } else if (flu_count > 5){ //if flu count is 5 then the text below will show
 		c6_context.fillStyle = '#00FF00'; // Style of text , green color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
     		c6_context.fillText('Strong Flu Symptoms: Rest/OTC Anti-Inflammatory Pain Relievers', 50, 100); // text to show and specific loction on canvas
-	      } else if (cold_count > 5){
+	      } else if (cold_count > 5){ //if cold count is 5 then the text below will show
 		c6_context.fillStyle = '#0000FF'; // Style of text , blue color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
     		c6_context.fillText('Strong Cold Symptoms: Rest/Replenish Fluids and Vitamins', 50, 100); // text to show and specific loction on canvas
-	      } else if (allergy_count > 5){
+	      } else if (allergy_count > 5){ //if allergy count is 5 then the text below will show
 		c6_context.fillStyle = '#ffff00'; // Style of text , yellow color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
     		c6_context.fillText('Strong Allergy Symptoms: Stay Indoors/Use Antihistamines', 50, 100); // text to show and specific loction on canvas
-	      } else {
+	      } else { //if none of the conditions have significant counts then the text below will show
 		c6_context.fillStyle = '#000000'; // Style of text , black color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
@@ -92,22 +91,6 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	      }
 	}
 	
-	
-	
-	
-	
-	/*var covidPercent=0; // This sets the basis of broken percentage at zero//
-	var fluPercent=0; // This sets the basis of sprained percentage at zero//
-	var coldPercent=0;
-	var allergyPercent=0;
-		
-	function results(){
-		brokenPercent= broken_count/ (broken_count + sprained_count) * 100; //Within the function, this compiles the count into a percentage (broken)//
-		sprainedPercent= sprained_count/ (sprained_count + broken_count) * 100; //Within the function, this compiles the count into a percentage (sprained)//
-		var resultText = document.getElementById("results"); // This variable helps link to the results//
-		resultText.innerHTML = "Probability it is broken =" + brokenPercent + "%<br> Probability it is sprained =" + sprainedPercent + "%";
- 		// This is the text of the results with the correct values inputted//
-	} */
 </script>
 </head>
 
@@ -145,7 +128,6 @@ console.log("This file last modified " + docMod); // generates message in javaSc
   text-align: center;
 }
 </style>
-<!--The code below allows the image to be resized to 90% of what the given screen allows for the image-->
 
   <body>
     <div id="header" class="w3-container w3-flat-carrot">
@@ -170,10 +152,10 @@ console.log("This file last modified " + docMod); // generates message in javaSc
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">  
-        <a href="#two" onclick="covidAdd();" class="w3-btn w3-red w3-square"> 7-25 days </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
-        <a href="#two" onclick="fluAdd();" class="w3-btn w3-red w3-square"> 7-14 days </a> <!--Added Code for button "a pop", onclick allows the selection to be tracked an added to overall sprained response bank-->
-        <a href="#two" onclick="coldAdd();" class="w3-btn w3-red w3-square"> Less than 14 days </a>
-	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Several Weeks </a>    
+        <a href="#two" onclick="covidAdd();" class="w3-btn w3-red w3-square"> 7-25 days </a> <!-- Added button which correlates to add one to covid count-->
+        <a href="#two" onclick="fluAdd();" class="w3-btn w3-red w3-square"> 7-14 days </a> <!-- Added button which correlates to add one to flu count-->
+        <a href="#two" onclick="coldAdd();" class="w3-btn w3-red w3-square"> Less than 14 days </a> <!-- Added button which correlates to add one to cold count-->
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Several Weeks </a> <!-- Added button which correlates to add one to allergy count-->
       </div> <!--For Content-->
 
       <div class="footer"><!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -188,9 +170,9 @@ console.log("This file last modified " + docMod); // generates message in javaSc
       </div> <!--For header-->
       
       <div id="content" class="w3-container">
-	<a href="#three" onclick="covidAdd();" onclick="fluAdd();" class="w3-btn w3-red w3-square"> Yes, dry </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
-        <a href="#three" onclick="coldAdd();" class="w3-btn w3-red w3-square"> Yes, mild </a>
-	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Rarely </a>     
+	<a href="#three" onclick="covidAdd();" onclick="fluAdd();" class="w3-btn w3-red w3-square"> Yes, dry </a> <!-- Added button which correlates to add one to covid count and flu count-->	
+        <a href="#three" onclick="coldAdd();" class="w3-btn w3-red w3-square"> Yes, mild </a> <!-- Added button which correlates to add one to cold count-->
+	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Rarely </a> <!-- Added button which correlates to add one to allergy count-->  
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -205,8 +187,8 @@ console.log("This file last modified " + docMod); // generates message in javaSc
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	<a href="#four" onclick="covidAdd();" class="w3-btn w3-red w3-square"> Sometimes </a> <!--Added Code for button "a crack", onclick allows the selection to be tracked an added to overall broken response bank-->	
-        <a href="#four" onclick="fluAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> No </a> <!--Added Code for button "a pop", onclick allows the selection to be tracked an added to overall sprained response bank-->  
+	<a href="#four" onclick="covidAdd();" class="w3-btn w3-red w3-square"> Sometimes </a> <!-- Added button which correlates to add one to covid count-->	
+        <a href="#four" onclick="fluAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> No </a> <!-- Added button which correlates to add one to flu count and cold count and allergy count-->  
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -221,8 +203,8 @@ console.log("This file last modified " + docMod); // generates message in javaSc
       </div> <!--For header-->
 	
       <div id="content" class="w3-container"> 
-	<a href="#five" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Yes </a> <!--Added Code for button "Ankle Bone", onclick allows the selection to be tracked an added to overall broken response bank-->
-	<a href="#five" onclick="covidAdd();" onclick="fluAdd();"  class="w3-btn w3-red w3-square"> No </a> <!--Added Code for button "Soft part of Ankle", onclick allows the selection to be tracked an added to overall sprained response bank-->
+	<a href="#five" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red w3-square"> Yes </a> <!-- Added button which correlates to add one to cold count and allergy count-->
+	<a href="#five" onclick="covidAdd();" onclick="fluAdd();"  class="w3-btn w3-red w3-square"> No </a> <!-- Added button which correlates to add one to covid count and flu count-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -233,114 +215,114 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 
     <div class="page" id="five"> <!--Added new page-->
       <div id="header" class="w3-container w3-flat-carrot">
-        <h1>Do you have a runny or stuffy nose?</h1> <!--Title to last step before actual results-->
+        <h1>Do you have a runny or stuffy nose?</h1> <!--Title for question five-->
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	<a href="#six" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Yes, its common </a> <!-- Added Final Button to lead to Results page-->
-        <a href="#six" onclick="fluAdd();" class="w3-btn w3-red"> Sometimes </a>
-        <a href="#six" onclick="covidAdd();" class="w3-btn w3-red"> Rarely/Not at all </a>
+	<a href="#six" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Yes, its common </a> <!-- Added button which correlates to add one to cold count and allergy count-->
+        <a href="#six" onclick="fluAdd();" class="w3-btn w3-red"> Sometimes </a> <!-- Added button which correlates to add one to flu count-->
+        <a href="#six" onclick="covidAdd();" class="w3-btn w3-red"> Rarely/Not at all </a> <!-- Added button which correlates to add one to covid count-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
         <p>Get Well Soon :)</p>
       </div> <!--For Footer-->	
 
-    </div> <!--For Entire Page-->   <!--6-->
+    </div> <!--For Entire Page-->   
 
      <div class="page" id="six"> <!--Added new page-->
       <div id="header" class="w3-container w3-flat-carrot">
-        <h1>How often do you have a sore throat?</h1> <!--Title to last step before actual results-->
+        <h1>How often do you have a sore throat?</h1> <!--Title for question six-->
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	<a href="#seven" onclick="coldAdd();" class="w3-btn w3-red"> Its common </a>
-	<a href="#seven" onclick="covidAdd();" onclick="fluAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a> <!-- Added Final Button to lead to Results page-->
+	<a href="#seven" onclick="coldAdd();" class="w3-btn w3-red"> Its common </a> <!-- Added button which correlates to add one to cold count-->
+	<a href="#seven" onclick="covidAdd();" onclick="fluAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a> <!-- Added button which correlates to add one to covid count and flu count and allergy count --> 
+      </div> <!--For content-->
+      
+      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
+        <p>Get Well Soon :)</p>
+      </div> <!--For Footer-->	
+
+    </div> <!--For Entire Page-->   
+
+    <div class="page" id="seven"> <!--Added new page-->
+      <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Do you have a fever?</h1> <!--Title for question seven-->
+      </div> <!--For header-->
+	
+      <div id="content" class="w3-container">
+	<a href="#eight" onclick="covidAdd();" onclick="fluAdd();" class="w3-btn w3-red"> Yes </a> <!-- Added button which correlates to add one to covid count and flu count-->
+	<a href="#eight" onclick="coldAdd();" class="w3-btn w3-red"> Yes,for a short period </a> <!-- Added button which correlates to add one to cold count-->   
+	<a href="#eight" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added Final Button to lead to Results page--> <!-- Added button which correlates to add one to allergy count-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
         <p>Get Well Soon :)</p>
       </div> <!--For Footer-->	
 
-    </div> <!--For Entire Page-->   <!--7-->
+    </div> <!--For Entire Page-->   
 
-	  <div class="page" id="seven"> <!--Added new page-->
+    <div class="page" id="eight"> <!--Added new page-->
       <div id="header" class="w3-container w3-flat-carrot">
-        <h1>Do you have a fever?</h1> <!--Title to last step before actual results-->
+        <h1>Are you feeling tired and weak?</h1> <!--Title for question eight-->
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	<a href="#eight" onclick="covidAdd();" onclick="fluAdd();" class="w3-btn w3-red"> Yes </a>
-	<a href="#eight" onclick="coldAdd();" class="w3-btn w3-red"> Yes,for a short period </a>      
-	<a href="#eight" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added Final Button to lead to Results page-->
+	<a href="#nine" onclick="fluAdd();" class="w3-btn w3-red"> Yes, its common </a> <!-- Added button which correlates to add one to flu count-->
+	<a href="#nine" onclick="covidAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a> <!-- Added button which correlates to add one to covid count and cold count and allergy count-->
+	<a href="#nine" onclick="covidAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added button which correlates to add one to covid count and cold count and allergy count-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
         <p>Get Well Soon :)</p>
       </div> <!--For Footer-->	
 
-    </div> <!--For Entire Page-->   <!--8-->
+    </div> <!--For Entire Page-->   
 
-	  <div class="page" id="eight"> <!--Added new page-->
+    <div class="page" id="nine"> <!--Added new page-->
       <div id="header" class="w3-container w3-flat-carrot">
-        <h1>Are you feeling tired and weak?</h1> <!--Title to last step before actual results-->
+        <h1> When are you having headaches?</h1> <!--TTitle for question nine-->
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	<a href="#nine" onclick="fluAdd();" class="w3-btn w3-red"> Yes, its common </a>
-	<a href="#nine" onclick="covidAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a>
-	<a href="#nine" onclick="covidAdd();" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added Final Button to lead to Results page-->
+	<a href="#ten" onclick="fluAdd();" class="w3-btn w3-red"> Its common </a> <!-- Added button which correlates to add one to flu count-->
+	<a href="#ten" onclick="covidAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a> <!-- Added button which correlates to add one to covid count and allergy count-->
+	<a href="#ten" onclick="coldAdd();" class="w3-btn w3-red"> Rarely </a> <!-- Added button which correlates to add one to cold count-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
         <p>Get Well Soon :)</p>
       </div> <!--For Footer-->	
 
-    </div> <!--For Entire Page-->   <!--9-->
+    </div> <!--For Entire Page-->   
 
-	  <div class="page" id="nine"> <!--Added new page-->
+    <div class="page" id="ten"> <!--Added new page-->
       <div id="header" class="w3-container w3-flat-carrot">
-        <h1> When are you having headaches?</h1> <!--Title to last step before actual results-->
+        <h1>Are you having body aches and pains?</h1> <!--Title for question ten-->
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	<a href="#ten" onclick="fluAdd();" class="w3-btn w3-red"> Its common </a>
-	<a href="#ten" onclick="covidAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> Sometimes </a>
-	<a href="#ten" onclick="coldAdd();" class="w3-btn w3-red"> Rarely </a>
+	<a href="#eleven" onclick="coldAdd();" onclick="fluAdd();" class="w3-btn w3-red"> Yes, its common </a> <!-- Added button which correlates to add one to cold count and flu count-->
+	<a href="#eleven" onclick="covidAdd();" class="w3-btn w3-red"> Sometimes </a> <!-- Added button which correlates to add one to covid count-->
+	<a href="#eleven" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added button which correlates to add one to allergy count-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
         <p>Get Well Soon :)</p>
       </div> <!--For Footer-->	
 
-    </div> <!--For Entire Page-->   <!--10-->
+   </div> <!--For Entire Page-->   
 
-	  <div class="page" id="ten"> <!--Added new page-->
+    <div class="page" id="eleven"> <!--Added new page-->
       <div id="header" class="w3-container w3-flat-carrot">
-        <h1>Are you having body aches and pains?</h1> <!--Title to last step before actual results-->
+        <h1>Are you having diarrhea?</h1> <!--Title for question eleven-->
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	<a href="#eleven" onclick="coldAdd();" onclick="fluAdd();" class="w3-btn w3-red"> Yes, its common </a>
-	<a href="#eleven" onclick="covidAdd();" class="w3-btn w3-red"> Sometimes </a>
-	<a href="#eleven" onclick="allergyAdd();" class="w3-btn w3-red"> No </a>
-      </div> <!--For Content-->
-
-      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
-        <p>Get Well Soon :)</p>
-      </div> <!--For Footer-->	
-
-   </div> <!--For Entire Page-->   <!--11-->
-
-	  <div class="page" id="eleven"> <!--Added new page-->
-      <div id="header" class="w3-container w3-flat-carrot">
-        <h1>Are you having diarrhea?</h1> <!--Title to last step before actual results-->
-      </div> <!--For header-->
-	
-      <div id="content" class="w3-container">
-	<a href="#twelve" onclick="covidAdd();" class="w3-btn w3-red"> Sometimes </a>
-	<a href="#twelve" onclick="fluAdd();" class="w3-btn w3-red"> Sometimes (for children) </a>
-	<a href="#twelve" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added Final Button to lead to Results page-->
+	<a href="#twelve" onclick="covidAdd();" class="w3-btn w3-red"> Sometimes </a> <!-- Added button which correlates to add one to covid count-->
+	<a href="#twelve" onclick="fluAdd();" class="w3-btn w3-red"> Sometimes (for children) </a> <!-- Added button which correlates to add one to flu count-->
+	<a href="#twelve" onclick="coldAdd();" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- Added button which correlates to add one to cold count and allergy count-->
       </div> <!--For Content-->
 
       <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
@@ -349,83 +331,23 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 
     </div> <!--For Entire Page-->  
 
-	 <div class="page" id="twelve"> <!--Added new page-->
+    <div class="page" id="twelve"> <!--Added new page-->
       <div id="header" class="w3-container w3-flat-carrot">
-        <h1>View Results</h1> <!--Title to last step before actual results-->
+        <h1>View Results</h1> <!--Title for results-->
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	 <center><canvas id="c6" width="1000" height="250" style="border:1px solid #000000;"></canvas></center>
+	 <center><canvas id="c6" width="1000" height="250" style="border:1px solid #000000;"></canvas></center> <!-- canvas-->
       <div>
 	  <center><button onclick="showFillText();return true;">Click for results</button></center>
-        </div>
-      </div>
+        </div> <!--For buttons-->
+      </div> <!-- For content-->
 	<div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
         <p>Get Well Soon :)</p>
       </div> <!--For Footer-->	
 
     </div> <!--For Entire Page-->   
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	
-      <div class="page" id="six"> <!-- Added final page to view results-->
-      <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Results</h1> <!--Page title for the actual results page-->
-      </div> <!--For header-->
-	
-      <div id="content" class="w3-container">
-	<p id="results"></p> <!--Results called back and posted here-->
-      </div> <!--For Content-->
-
-      <div class="footer"> <!--This is where the footer occurs, with text of Get Well Soon :)-->
-        <p>Get Well Soon :)</p>
-      </div> <!--For Footer-->				
-		
-    </div> <!--For Entire Page-->
-		
-
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+	 	  
 <!--<footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer> -->	
