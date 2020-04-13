@@ -68,22 +68,22 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 		c6_context.fillStyle = '#00FF00'; // Style of text , green color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
-    		c6_context.fillText('Strong Covid Symptoms: Seek Medical Attention', 50, 100); // text to show and specific loction on canvas
+    		c6_context.fillText('Strong Covid Symptoms: Seek Medical Attention', 0, 100); // text to show and specific loction on canvas
 	      } else if (flu_count > 5){
 		c6_context.fillStyle = '#00FF00'; // Style of text , green color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
-    		c6_context.fillText('Strong Flu Symptoms: Rest/OTC Anti-Inflammatory Pain Relievers', 50, 100); // text to show and specific loction on canvas
+    		c6_context.fillText('Strong Flu Symptoms: Rest/OTC Anti-Inflammatory Pain Relievers', 0, 100); // text to show and specific loction on canvas
 	      } else if (cold_count > 5){
 		c6_context.fillStyle = '#00FF00'; // Style of text , green color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
-    		c6_context.fillText('Stong Cold Symptoms: Rest/Replenish Fluids and Vitamins', 50, 100); // text to show and specific loction on canvas
+    		c6_context.fillText('Stong Cold Symptoms: Rest/Replenish Fluids and Vitamins', 0, 100); // text to show and specific loction on canvas
 	      } else if (allergy_count > 5){
 		c6_context.fillStyle = '#00FF00'; // Style of text , green color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
     		c6_context.textBaseline = 'bottom'; // which part of text is aligned on inputted location
-    		c6_context.fillText('Strong Allergy Symptoms: Stay Indoors/Use Antihistamines', 50, 100); // text to show and specific loction on canvas
+    		c6_context.fillText('Strong Allergy Symptoms: Stay Indoors/Use Antihistamines', 0, 100); // text to show and specific loction on canvas
 	      } else {
 		c6_context.fillStyle = '#00FF00'; // Style of text , green color
     		c6_context.font = 'italic bold 30px sans-serif'; // font of text
@@ -355,7 +355,7 @@ console.log("This file last modified " + docMod); // generates message in javaSc
       </div> <!--For header-->
 	
       <div id="content" class="w3-container">
-	 <center><canvas id="c6" width="800" height="250" style="border:1px solid #000000;"></canvas></center>
+	 <center><canvas id="c6" width="1000" height="250" style="border:1px solid #000000;"></canvas></center>
       <div>
 	  <center><button onclick="showFillText();return true;">Click for results</button></center>
         </div>
